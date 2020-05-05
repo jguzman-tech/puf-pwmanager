@@ -164,7 +164,7 @@ def client_handler(client_socket, client_ip, client_port, do_encrypt,
     address = str(int(
         hashlib.sha256(
             get_xor(client_name, password).encode()
-        ).hexdigest()[0:3], 16))
+        ).hexdigest()[0:3], 16) + 1)
     # value = PUF(sha256(password)), 20-bit value,
     value = read_puf(memory_grid,
                      hashlib.sha256(password.encode()).hexdigest(),

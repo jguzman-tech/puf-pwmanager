@@ -1,0 +1,19 @@
+* Purpose
+This is an example of how a Physically Unclonable Function (PUF) can be used to
+enhance the security of a server-side password manager. A RNG is used instead of
+an actual PUF in this project.
+
+This project was done as part of my INF639: Nanomaterials and Nanoelectronics
+for Cybersecurity at NAU.
+* Communication Flows
+(client --> server) <uid> <password>: enroll
+(server --> client) enrollment success
+
+(client --> server) <uid> <password>: get balance
+(server --> client) current balance: <balance>
+
+(client --> server) <uid> <password>: add <dollars>
+(server --> client) new balance: <balance>
+
+(client --> server) <uid> <password>: withdraw <dollars>
+(server --> client) new balance: <balance>
